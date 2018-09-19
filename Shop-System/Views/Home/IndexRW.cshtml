@@ -1,0 +1,52 @@
+﻿@model IEnumerable<Shop_System.Models.ITEMS>
+
+@{
+    ViewBag.Title = "IndexRW";
+}
+
+<h2>Main Page(Home)</h2>
+
+<p>
+    @Html.ActionLink("Login", "Login")
+    @Html.ActionLink("Register", "Register")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ITEM_ID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DESCRIPTION)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.QUANTITY)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PRICE)
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ITEM_ID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DESCRIPTION)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.QUANTITY)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PRICE)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.ITEM_ID }) |
+            @Html.ActionLink("Details", "Details", new { id = item.ITEM_ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.ITEM_ID })
+        </td>
+    </tr>
+    }
+
+</table>

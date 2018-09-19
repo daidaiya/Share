@@ -1,0 +1,22 @@
+﻿@model Shop_System.Models.USERS
+@{
+    ViewBag.Title = "user register";
+}
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+
+<h2>@ViewBag.Title</h2>
+@using (Html.BeginForm("Register", null, FormMethod.Post))
+{
+<table>
+    <tr><td>@Html.DisplayNameFor(x => x.NAME)：</td><td>@Html.TextBoxFor(x => x.NAME) @Html.ValidationMessageFor(x => x.NAME)</td></tr>
+    <tr><td>@Html.DisplayNameFor(x => x.SURNAME)：</td><td>@Html.TextBoxFor(x => x.SURNAME)@Html.ValidationMessageFor(x => x.SURNAME)</td></tr>
+    <tr><td>@Html.DisplayNameFor(x => x.ADDRESS)：</td><td>@Html.TextBoxFor(x => x.ADDRESS)@Html.ValidationMessageFor(x => x.ADDRESS)</td></tr>
+    <tr><td>@Html.DisplayNameFor(x => x.EMAIL)：</td><td>@Html.TextBoxFor(x => x.EMAIL)@Html.ValidationMessageFor(x => x.EMAIL)</td></tr>
+    <tr><td>@Html.DisplayNameFor(x => x.TELEPHONE)：</td><td>@Html.TextBoxFor(x => x.TELEPHONE)@Html.ValidationMessageFor(x => x.TELEPHONE)</td></tr>
+    <tr><td>@Html.DisplayNameFor(x => x.USER_NAME)：</td><td>@Html.TextBoxFor(x => x.USER_NAME)@Html.ValidationMessageFor(x => x.USER_NAME)</td></tr>
+    <tr><td>@Html.DisplayNameFor(x => x.U_PASSWORD)：</td><td>@Html.PasswordFor(x => x.U_PASSWORD)@Html.ValidationMessageFor(x => x.U_PASSWORD)</td></tr>
+    <tr><td>@Html.DisplayNameFor(x => x.RePwd)：</td><td>@Html.PasswordFor(x => x.RePwd)@Html.ValidationMessageFor(x => x.RePwd)</td></tr>
+    <tr><td colspan="2"><input type="submit" value="register" /></td></tr>
+</table>
+}
